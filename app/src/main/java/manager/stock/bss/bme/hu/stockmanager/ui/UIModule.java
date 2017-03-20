@@ -7,6 +7,7 @@ import javax.inject.Singleton;
 import dagger.Module;
 import dagger.Provides;
 import manager.stock.bss.bme.hu.stockmanager.ui.main.MainPresenter;
+import manager.stock.bss.bme.hu.stockmanager.ui.newTool.NewToolPresenter;
 
 @Module
 public class UIModule {
@@ -25,6 +26,12 @@ public class UIModule {
     @Singleton
     public MainPresenter provideMainPresenter() {
         return new MainPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public NewToolPresenter provideNewToolPresenter() {
+        return new NewToolPresenter();
     }
 
 }
