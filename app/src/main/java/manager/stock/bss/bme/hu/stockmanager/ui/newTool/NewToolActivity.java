@@ -2,6 +2,7 @@ package manager.stock.bss.bme.hu.stockmanager.ui.newTool;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.widget.Toast;
 
 import javax.inject.Inject;
 
@@ -31,5 +32,10 @@ public class NewToolActivity extends AppCompatActivity implements NewToolScreen{
     protected void onStop() {
         super.onStop();
         newToolPresenter.detachScreen();
+    }
+
+    @Override
+    public void barcodeAlreadyInUse() {
+        Toast.makeText(this, "This barcode is already in use, choose an other one!", Toast.LENGTH_SHORT).show();
     }
 }

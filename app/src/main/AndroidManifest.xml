@@ -17,7 +17,9 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".ui.newTool.NewToolActivity"></activity>
+        <activity android:name=".ui.newTool.NewToolActivity" />
+        <activity android:name=".ui.tootDetail.ToolDetailActivity" />
+        <activity android:name=".ui.Sync.SyncActivity"></activity>
     </application>
 
 </manifest>

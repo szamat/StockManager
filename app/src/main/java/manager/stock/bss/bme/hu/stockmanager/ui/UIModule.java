@@ -6,8 +6,10 @@ import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import manager.stock.bss.bme.hu.stockmanager.ui.Sync.SyncPresenter;
 import manager.stock.bss.bme.hu.stockmanager.ui.main.MainPresenter;
 import manager.stock.bss.bme.hu.stockmanager.ui.newTool.NewToolPresenter;
+import manager.stock.bss.bme.hu.stockmanager.ui.tootDetail.ToolDetailPresenter;
 
 @Module
 public class UIModule {
@@ -34,4 +36,15 @@ public class UIModule {
         return new NewToolPresenter();
     }
 
+    @Provides
+    @Singleton
+    public ToolDetailPresenter provideToolDetailPresenter() {
+        return new ToolDetailPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public SyncPresenter provideSyncPresenter() {
+        return new SyncPresenter();
+    }
 }
