@@ -2,10 +2,14 @@ package manager.stock.bss.bme.hu.stockmanager.ui;
 
 import android.content.Context;
 
+import java.util.concurrent.Executor;
+import java.util.concurrent.Executors;
+
 import javax.inject.Singleton;
 
 import dagger.Module;
 import dagger.Provides;
+import de.greenrobot.event.EventBus;
 import manager.stock.bss.bme.hu.stockmanager.ui.Sync.SyncPresenter;
 import manager.stock.bss.bme.hu.stockmanager.ui.main.MainPresenter;
 import manager.stock.bss.bme.hu.stockmanager.ui.newTool.NewToolPresenter;
@@ -46,5 +50,17 @@ public class UIModule {
     @Singleton
     public SyncPresenter provideSyncPresenter() {
         return new SyncPresenter();
+    }
+
+    @Provides
+    @Singleton
+    public EventBus provideEventBus() {
+        return EventBus.getDefault();
+    }
+
+    @Provides
+    @Singleton
+    public Executor provideExecutor() {
+        return Executors.newFixedThreadPool(1);
     }
 }

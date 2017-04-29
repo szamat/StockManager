@@ -1,0 +1,40 @@
+package manager.stock.bss.bme.hu.stockmanager.interactor.tool.event;
+
+import java.util.List;
+
+import manager.stock.bss.bme.hu.stockmanager.domain.Tool;
+
+public class GetToolEvent {
+    private int code;
+    private Tool tool;
+    private Throwable throwable;
+
+    //<editor-fold desc="Constructors|Getters|Setters">
+
+    public GetToolEvent() {
+    }
+
+    public int getCode() {
+        return code;
+    }
+
+    public void setCode(int code) {
+        this.code = code;
+    }
+
+    public Tool getTool() {
+        return tool;
+    }
+
+    public void setTool(Tool tool) {
+        this.tool = tool;
+    }
+
+    public Throwable getThrowable() {
+        return throwable;
+    }
+
+    public void setThrowable(Throwable throwable) {
+        this.throwable = throwable;
+    }
+}
