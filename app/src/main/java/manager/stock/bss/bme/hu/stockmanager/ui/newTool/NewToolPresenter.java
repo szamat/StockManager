@@ -1,11 +1,14 @@
 package manager.stock.bss.bme.hu.stockmanager.ui.newTool;
 
+import android.util.Log;
+
 import java.util.concurrent.Executor;
 
 import javax.inject.Inject;
 
 import de.greenrobot.event.EventBus;
 import manager.stock.bss.bme.hu.stockmanager.interactor.tool.ToolInteractor;
+import manager.stock.bss.bme.hu.stockmanager.interactor.tool.event.SaveToolEvent;
 import manager.stock.bss.bme.hu.stockmanager.ui.Presenter;
 import manager.stock.bss.bme.hu.stockmanager.domain.Tool;
 
@@ -22,7 +25,6 @@ public class NewToolPresenter extends Presenter<NewToolScreen>{
     @Inject
     EventBus bus;
 
-
     public NewToolPresenter() {
     }
 
@@ -35,6 +37,7 @@ public class NewToolPresenter extends Presenter<NewToolScreen>{
 
     @Override
     public void detachScreen() {
+        bus.unregister(this);
         super.detachScreen();
     }
 
@@ -46,5 +49,19 @@ public class NewToolPresenter extends Presenter<NewToolScreen>{
              }
          });
      }
+
+    public void onEventMainThread(SaveToolEvent event) {
+        if (event.getThrowable() != null) {
+            event.getThrowable().printStackTrace();
+            if (screen != null) {
+
+            }
+            Log.e("Networking", "Error reading favourites", event.getThrowable());
+        } else {
+            screen.savedSuccessfull();
+
+        }
+    }
+
 }
 

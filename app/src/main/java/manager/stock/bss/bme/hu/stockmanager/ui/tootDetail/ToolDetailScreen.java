@@ -1,7 +1,8 @@
 package manager.stock.bss.bme.hu.stockmanager.ui.tootDetail;
 
-import manager.stock.bss.bme.hu.stockmanager.dto.ToolDetails;
+import manager.stock.bss.bme.hu.stockmanager.domain.Tool;
 
 public interface ToolDetailScreen {
-    void showToolDetails(ToolDetails toolDetails);
+    void showToolDetails(Tool toolDetails);
+    void deleteSuccess();
 }

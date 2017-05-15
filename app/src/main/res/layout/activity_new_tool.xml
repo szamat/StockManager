@@ -1,9 +1,92 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="manager.stock.bss.bme.hu.stockmanager.ui.newTool.NewToolActivity">
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:fillViewport="true" >
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
 
-</android.support.constraint.ConstraintLayout>
+        <EditText
+            android:id="@+id/new_tool_name"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Tool name"
+            />
+
+        <EditText
+            android:id="@+id/new_tool_detail"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:hint="Description"
+            android:inputType="textMultiLine" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Inventory numbers"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/new_tool_inv_sch"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="inventory number - Schönherz" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+
+            <EditText
+                android:id="@+id/new_tool_inv_ki"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="Inventory number - KI" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/new_tool_place"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Place" />
+
+        <EditText
+            android:id="@+id/new_tool_barcode"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Barcode"
+            android:textSize="24sp" />
+        <Button
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/colorAccent"
+            android:textColor="@color/whiteText"
+            android:id="@+id/new_tool_save"
+            android:text="Save"/>
+
+
+    </LinearLayout>
+</ScrollView>
+    <android.support.design.widget.NavigationView
+        android:id="@+id/navigation"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_gravity="start"
+        app:menu="@menu/navigation_menu" />
+
+</android.support.v4.widget.DrawerLayout>

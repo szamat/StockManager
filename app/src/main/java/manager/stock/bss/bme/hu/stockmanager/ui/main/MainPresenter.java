@@ -32,8 +32,6 @@ public class MainPresenter extends Presenter<MainScreen>{
     public void attachScreen(MainScreen screen) {
         super.attachScreen(screen);
 
-        getTools();
-
         injector.inject(this);
         bus.register(this);
     }

@@ -1,3 +1,11 @@
 <resources>
     <string name="app_name">StockManager</string>
+    <string name="drawer_open">StockManager</string>
+    <string name="drawer_close">StockManager</string>
+    <string-array
+        name="menu_items">
+        <item>Egy</item>
+        <item>Kettő</item>
+        <item>Három</item>
+    </string-array>
 </resources>
